@@ -1,6 +1,6 @@
 import pandas as pd
 
-def resample_text_data_to_daily(df: pd.DataFrame, separator: str = "\n[NEXT]\n", column: str = "text") -> pd.DataFrame:
+def resample_to_daily(df: pd.DataFrame, separator: str = "\n[NEXT]\n", column: str = "text") -> pd.DataFrame:
     daily_df = df.resample('D').agg({
         column: separator.join
     })
